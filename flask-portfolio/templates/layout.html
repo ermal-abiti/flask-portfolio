@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% if title %}
+            <title>EA Archive - {{ title }}</title>
+        {% else %}
+            <title>EA Archive</title>
+        {% endif %}
+         
+        <style>
+            body{
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            nav{
+                text-align: center;
+            }
+            nav ul {
+                display: inline;
+                color: black;
+                padding: 10px;
+            }
+            nav ul li{
+                display: inline;
+                
+            }
+            nav ul li a{
+                color: black;
+                text-decoration: none;
+                padding: 10px;
+            } 
+            nav ul li a:hover{
+                background-color: black;
+                color: white;
+                text-decoration: none;
+            }
+
+
+            .post {
+                background-color: #e6e6e6;
+                width: 400px;
+                padding: 5px 20px;
+                margin: 40px auto;
+                
+            }
+
+        </style>
+
+    </head>
+
+    <body>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="library">Library</a></li>
+                <li><a href="blog">Blog</a></li>
+                <li><a href="about">About</a></li>
+            </ul>
+        </nav>
+        
+        {% if title %}
+            <h1>{{ title }}</h1>
+            <br>
+        {% else %}
+            <h1>EA Archive - UNSPECIFIED PAGE</h1>
+            <br>
+        {% endif %}
+
+
+        {% block content %}
+
+        {% endblock %}
+        
+    </body>
+</html>
